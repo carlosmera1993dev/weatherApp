@@ -3,3 +3,173 @@
     padding: 0;
     margin: 0;
 }
+
+.mainContainer {
+    height: 100vh;    
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
+    background-color: rgb(0, 141, 184);
+    font-family: sans-serif;
+    color: white;
+    transition: background-color 1s ease-in;
+    animation: changeColor 4s linear infinite;
+}
+
+.main-title {
+    font-size: 2.5em;
+    text-decoration: underline;
+}
+
+.location,
+.temperature {
+    height: 30vh;
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.location-timezone {
+    font-size: 1.6em;
+}
+
+.temperature {
+    flex-direction: column;
+}
+
+.degree-section {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border: white 4px solid;
+    padding: 5px;
+    box-shadow: 10px 15px 20px -12px rgba(0, 0, 0, .8);
+}
+
+.degree-section span {
+    margin: 10px;
+    font-size: 2em;
+}
+
+.degree-section h2 {
+    font-size: 2.8em;
+}
+
+/* ICON */
+
+.iconContainer {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.288);
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.weatherIcon {
+    animation: rotateImage 10s linear infinite;
+}
+
+/* SELECT */
+.selectMenuContainer {
+    border: solid white 4px;
+    box-shadow: 10px 15px 20px -12px rgba(0, 0, 0, .8);
+    margin-top: 20px;
+    transition: .2s ease-in;
+}
+
+.selectMenu {
+    font-size: 1.1em;
+    background-color: rgba(255, 255, 255, 0.685);
+    padding: 5px;
+    color:rgba(0, 0, 0, 0.705);
+}
+
+.selectMenuContainer:hover {
+    border: solid rgba(0, 0, 0, 0.185) 4px;
+}
+
+
+/* KEYFRAMES */
+@keyframes animateImage{
+    25% {
+        transform: rotate(10deg);
+    }
+    50% {        
+        transform: rotate(0deg);
+    }
+    75% {        
+        transform: rotate(-10deg);
+    }
+    100% {        
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes rotateImage{    
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes changeColor {
+    /* 0% {
+        background-color: rgb(51, 114, 209);
+    } */
+    50% {
+        background-color: rgb(34, 108, 168);
+    }
+    100% {
+        background-color: rgb(0, 141, 184);
+    }
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 700px) {
+    .location,
+    .temperature {        
+        width: 40%;
+    }
+    .main-title {
+        font-size: 3.5em;     
+    }
+    .location-timezone {
+        font-size: 2em;
+    }
+    .degree-section span {        
+        font-size: 2.4em;
+    }
+    
+    .degree-section h2 {
+        font-size: 3em;
+    }
+    .temperature-description {
+        font-size: 1.2em;
+    }
+}
+
+@media (min-width: 1000px) {
+    .location,
+    .temperature {        
+        width: 35%;
+    }
+    .main-title {
+        font-size: 4em;     
+    }
+    .location-timezone {
+        font-size: 2.4em;
+    }
+    .degree-section span {        
+        font-size: 2.8em;
+    }
+    
+    .degree-section h2 {
+        font-size: 3.5em;
+    }
+    .temperature-description {
+        font-size: 1.6em;
+    }
+}
